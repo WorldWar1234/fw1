@@ -1,3 +1,4 @@
+process.env["NO_PROXY"]="";
 const request = require('request');
 const pick = require('lodash').pick;
 const shouldCompress = require('./shouldCompress');
