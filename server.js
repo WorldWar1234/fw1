@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 'use strict'
+process.env["NO_PROXY"]="*";
 const cluster = require("cluster");
 const os = require("os");
 
