@@ -6,7 +6,7 @@ const compress = require('./compress');
 const bypass = require('./bypass');
 const copyHeaders = require('./copyHeaders');
 
-function (req, res) {
+function proxy(req, res) {
   request.get(
     req.params.url,
     {
