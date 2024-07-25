@@ -6,16 +6,10 @@ const compress = require('./compress');
 const bypass = require('./bypass');
 const copyHeaders = require('./copyHeaders');
 
-function (req, res) {
+function proxy(req, res) {
   request.get(
     req.params.url,
     {
-      headers: {
-        ...pick(req.headers, ['cookie', 'dnt', 'referer']),
-        'user-agent': 'Bandwidth-Hero Compressor',
-        'x-forwarded-for': req.headers['x-forwarded-for'] || req.ip,
-        via: '1.1 bandwidth-hero'
-      },
       timeout: 10000,
       maxRedirects: 5,
       encoding: null,
